@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/style.css" rel="stylesheet">
+  <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+</head>
+<script>
+  var cont=0;
+function loopSlider(){
+var xx= setInterval(function(){
+      switch(cont)
+      {
+      case 0:{
+          $("#slider-1").fadeOut(400);
+          $("#slider-2").delay(400).fadeIn(400);
+          $("#sButton1").removeClass("bg-purple-800");
+          $("#sButton2").addClass("bg-purple-800");
+      cont=1;
+      
+      break;
+      }
+      case 1:
+      {
+      
+          $("#slider-2").fadeOut(400);
+          $("#slider-1").delay(400).fadeIn(400);
+          $("#sButton2").removeClass("bg-purple-800");
+          $("#sButton1").addClass("bg-purple-800");
+         
+      cont=0;
+      
+      break;
+      }
+      
+      
+      }},8000);
+
+}
+
+function reinitLoop(time){
+clearInterval(xx);
+setTimeout(loopSlider(),time);
+}
+
+function sliderButton1(){
+
+  $("#slider-2").fadeOut(400);
+  $("#slider-1").delay(400).fadeIn(400);
+  $("#sButton2").removeClass("bg-purple-800");
+  $("#sButton1").addClass("bg-purple-800");
+  reinitLoop(4000);
+  cont=0
+  
+  }
+  
+  function sliderButton2(){
+  $("#slider-1").fadeOut(400);
+  $("#slider-2").delay(400).fadeIn(400);
+  $("#sButton1").removeClass("bg-purple-800");
+  $("#sButton2").addClass("bg-purple-800");
+  reinitLoop(4000);
+  cont=1
+  
+  }
+
+  $(window).ready(function(){
+      $("#slider-2").hide();
+      $("#sButton1").addClass("bg-purple-800");
+      
+
+      loopSlider();
+  });
+</script>
+<style>
+    ::-webkit-scrollbar {
+	width: 3px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 20px 4px 10px #f3eee7;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #2e014b;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #fff;
+}
+</style>
+<body class="bg-white" x-data="{ showModal2: false }" :class="{'overflow-y-hidden': showModal2 }">
+  <div class="2xl:container h-screen m-auto">
+    <div hidden class="fixed inset-0 w-7/12 lg:block">
+        <span class="absolute left-6 bottom-6 text-sm">Powered by team <a href="https://www.CodIN.com/" target="blank" title="CodIN">CodIN</a></span>
+        <div class="w-full h-full object-cover"poster="../public/images/bg.jpg">
+          <div class="sliderAx h-auto">
+            <div id="slider-1" class="container mx-auto">
+              <div class="bg-cover bg-center  h-screen text-white py-24 px-10 object-fill" style="background-image: url(../assets/image/monut.jpg)"> 
+          </div> <!-- container -->
+            <br>
+            </div>
+            <div id="slider-2" class="container mx-auto">
+              <div class="bg-cover bg-top  h-screen text-white py-24 px-10 object-fill" style="background-image: url(../assets/image/monuttop.jpg)">
+          </div> <!-- container -->
+            <br>
+            </div>
+          </div>
+       <div  class="flex justify-between w-12 mx-auto pb-2">
+              <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2 " ></button>
+          <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
+        </div>
+      
+        </div>
+    </div>
+    <div hidden role="hidden" class="fixed inset-0 w-6/12 ml-auto bg-white bg-opacity-70 backdrop-blur-xl lg:block"></div>
+    <div class="relative h-full ml-auto lg:w-6/12">
+        <div class="m-auto py-12 px-6 sm:p-20 xl:w-10/12">
+            <div class="space-y-4 text-center flex justify-center flex-col object-center items-center   ">
+                <a href="">
+                    <img src="../assets/image/mounttopuni.png" class="w-40" alt="Mountain top logo">
+                </a>
+                <p class="font-medium text-lg text-gray-600">Welcome to Mountain Top University!</p>
+            </div>
+
+            <form action="" class="space-y-6 py-6">
+                <div>
+                    <input 
+                   
+                            type="text" 
+                            placeholder="First Name"
+                            name="fname"
+                            class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                    >
+                </div>
+                <div>
+                  <input 
+                            type="text" 
+                   
+                            placeholder="Last Name"
+                            name="lname"
+                            class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                  >
+              </div>
+              <div>
+                <input 
+                            type="text" 
+                   
+                            placeholder="Matric Number"
+                            name="matric"
+                            class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none" 
+                >
+              </div>
+              <div>
+                <input 
+                            type="text" 
+                   
+                            placeholder="Level"
+                            name="level"
+                            class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+                >
+            </div>
+
+                <div class="flex flex-col items-end text-gray-600">
+                  <select id="countries" class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none" required>
+                    <option selected>Semester</option>
+                    <option value="fs">First Semester</option>
+                    <option value="ss">Second Semester</option>
+                  </select>
+                </div>
+                <div>
+                    <button
+                       @click="modalOpen = true"
+                      class="w-full px-6 py-3 rounded-xl bg-[#5d0189] hover:bg-[#5a0e7d] focus:bg-[#5d0189] active:bg-sky-800 transition-all duration-300">
+                        <span class="font-semibold text-white text-lg">Send</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="border-t pt-4">
+                <div class="space-y-2 text-center">
+                    <span class="block text-sm tracking-wide text-gray-500">Powered by team <a href="https://www.CodIN.com/" target="blank" title="CodIN">CodIN</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div
+x-show="modalOpen"
+x-transition
+class="
+bg-black bg-opacity-50
+fixed
+top-0
+left-0
+w-full
+min-h-screen
+h-full
+flex
+items-center
+justify-center
+px-4
+py-5
+z-50
+"
+>
+<div
+   @click.outside="modalOpen = false"
+   class="
+   w-72
+   rounded-[200px]
+   bg-white
+   py-12
+   px-8
+   md:py-[60px] md:px-[70px]
+   text-center
+   "
+   >
+  <div class="flex justify-center item-center">
+     <div class="flex justify-center items-center w-28 h-28 border-4 border-[#5d0189] rounded-full mb-4"x-transition:enter="transition transform duration-300"
+     x-transition:enter-start="scale-0"
+     x-transition:enter-end="scale-100"
+     x-transition:leave="transition transform duration-300"
+     x-transition:leave-start="scale-100"
+     x-transition:leave-end="scale-0">
+         <svg class="fill-current w-20" viewBox="0 0 20 20">
+           <path
+             d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+           ></path>
+         </svg>
+       </div>
+  </div>
+   <h3 class="font-bold text-dark text-xl sm:text-2xl pb-2">
+      Your Message Sent Successfully
+   </h3>
+   <span
+      class="inline-block bg-primary h-1 w-[50px] mx-auto rounded mb-6"
+      ></span>
+   <p class="text-base text-body-color leading-relaxed mb-10">
+      Lorem Ipsum is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy text
+      ever since
+   </p>
+  
+   <div class="flex justify-center items-center -mx-3">
+      <div class="w-1/2 px-3">
+         <button
+            class="
+            block
+            text-center
+            w-full
+            p-3
+            text-base
+            font-medium
+            rounded-lg
+            bg-primary
+            text-white
+            border border-primary
+            hover:bg-opacity-90
+            transition
+            "
+            >
+         Print Result
+         </button>
+      </div>
+   </div>
+</div>
+</div> -->
+
+
+      <!-- <div
+      class="fixed inset-0 w-full h-full z-20 bg-black bg-opacity-50 duration-300 overflow-y-auto hidden"
+      x-show="showModal2"
+      id="modal-box"
+      x-transition:enter="transition duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition duration-300"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      >
+      <div class="relative sm:w-3/4 md:w-1/2 lg:w-1/3 mx-2 sm:mx-auto my-32 opacity-100">
+        <div
+          class="relative bg-white shadow-lg rounded-lg text-gray-900 z-20"
+          @click.away="showModal2 = false"
+          x-show="showModal2"
+          x-transition:enter="transition transform duration-300"
+          x-transition:enter-start="scale-0"
+          x-transition:enter-end="scale-100"
+          x-transition:leave="transition transform duration-300"
+          x-transition:leave-start="scale-100"
+          x-transition:leave-end="scale-0"
+        >
+          <header class="flex flex-col justify-center items-center p-3 text-[#5d0189]">
+            <div class="flex justify-center w-28 h-28 border-4 border-[#5d0189] rounded-full mb-4">
+              <svg class="fill-current w-20" viewBox="0 0 20 20">
+                <path
+                  d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="font-semibold text-2xl">Success</h2>
+          </header>
+          <main class="p-3 text-center">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptatem, optio dolorem accusantium fuga
+              molestias nobis sequi autem ducimus laudantium beatae amet earum, quia reiciendis corporis animi modi
+              pariatur impedit!
+            </p>
+          </main>
+          <footer class="flex justify-center bg-transparent">
+            <button
+              class="bg-[#5d0189] font-semibold text-white py-3 w-full rounded-b-md hover:bg-[#5d0189] focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300"
+              @click="showModal2 = false"
+            >
+              Print
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div> -->
+    <script>
+      const modalbg = document.getElementById('modal-bg');
+      const modalSwitch = document.getElementById('modal-switch');
+      const modalBox = document.getElementById('modal-box');
+      const modalClose = document.getElementById('modal-close');
+      modalbg.addEventListener("click", function() {
+        modalBox.classList.add('hidden')
+        modalbg.classList.add('hidden')
+      });
+      modalSwitch.addEventListener("click", function() {
+        modalBox.classList.remove('hidden')
+        modalbg.classList.remove('hidden')
+      });
+      modalClose.addEventListener("click", function() {
+        modalBox.classList.remove('hidden')
+        modalbg.classList.remove('hidden')
+      });
+    </script>
+</body>
+</html>
