@@ -1,3 +1,10 @@
-const Vrey = "I'm a programmmer";
-console.log(Vrey)
-alert(Vrey)
+const url = '#'
+fetch(url)
+    .then(response => {
+        // for(const pair of response.headers){
+        //     console.log(`${pair[0]}: ${pair[1]}`); 
+        //   }
+        return response.text();
+    }).then(data => {
+        console.log(data);
+    });

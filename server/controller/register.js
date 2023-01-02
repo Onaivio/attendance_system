@@ -5,8 +5,8 @@ const csv = require('csv-parser')
 const path = require('path')
 const user = require('../model/schema')
 
-const SignUp = async(req,res) =>{
-  const {fname,lname,level,matric,semester} = req.body
+const SignUp = async(req, res) =>{
+  const {fname, lname, level, matric, semester} = req.body
 
   if(!fname || !lname || !level || !matric || !semester){
     throw new customError.NotFoundError('User Information not provided')

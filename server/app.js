@@ -14,8 +14,7 @@ const xss = require('xss-clean')
 const fileupload = require('express-fileupload')
 
 //middlewares
-const errorMiddleware = require('./middleware/errorhandler')
-
+const errorMiddleware = require('./middleware/errorhandler');
 
 //DB
 const connectDB = require('./DB/db')
@@ -49,6 +48,4 @@ const start = async() =>{
     }
 }
 
-start()
-
-
+start();

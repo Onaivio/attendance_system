@@ -12,7 +12,7 @@
 <body>
     
     <!-- ====== Modal Section Start -->
-<section x-data="{modalOpen: false}">
+<section x-data="{modalOpen: false}" class="flex justify-center items-center w-screen h-screen">
     <div class="container py-20">
        <button
           @click="modalOpen = true"
@@ -52,7 +52,7 @@
           @click.outside="modalOpen = false"
           class="
           w-72
-          rounded-[200px]
+          rounded-[2%]
           bg-white
           py-12
           px-8
@@ -99,7 +99,7 @@
                    transition
                    "
                    >
-                Print Result
+                Print
                 </button>
              </div>
           </div>
