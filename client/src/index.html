@@ -1,125 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../dist/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-</head>
-<style>
-    ::-webkit-scrollbar {
-	width: 3px;
-}
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../dist/style.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		/>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	</head>
+	<style>
+		::-webkit-scrollbar {
+			width: 3px;
+		}
 
-::-webkit-scrollbar-track {
-	box-shadow: inset 20px 4px 10px #f3eee7;
-	border-radius: 10px;
-}
+		::-webkit-scrollbar-track {
+			box-shadow: inset 20px 4px 10px #f3eee7;
+			border-radius: 10px;
+		}
 
-::-webkit-scrollbar-thumb {
-	background: #2e014b;
-	border-radius: 10px;
-}
+		::-webkit-scrollbar-thumb {
+			background: #2e014b;
+			border-radius: 10px;
+		}
 
-::-webkit-scrollbar-thumb:hover {
-	background: #fff;
-}
-</style>
-<body class="bg-white" x-data="{ showModal2: false }" :class="{'overflow-y-hidden': showModal2 }">
-  <div class="2xl:container h-screen m-auto">
-    <div hidden class="fixed inset-0 w-7/12 lg:block">
-      <span class="absolute left-6 bottom-6 text-sm">Powered by team <a href="https://www.CodIN.com/" target="blank" title="CodIN">CodIN</a></span>
-      <div class="w-full h-full object-cover"poster="../public/images/bg.jpg">
-        <div class="sliderAx h-auto">
-          <div id="slider-1" class="container mx-auto">
-            <div class="bg-cover bg-center  h-screen text-white py-24 px-10 object-fill" style="background-image: url(../assets/image/monut.jpg)"> 
-            </div> <!-- container -->
-            <br>
-          </div>
-          <div id="slider-2" class="container mx-auto">
-            <div class="bg-cover bg-top  h-screen text-white py-24 px-10 object-fill" style="background-image: url(../assets/image/monuttop.jpg)">
-            </div> <!-- container -->
-            <br>
-          </div>
-        </div>
-        <div  class="flex justify-between w-12 mx-auto pb-2">
-          <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2 " ></button>
-          <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
-        </div>
-      </div>
-    </div>
-    <div hidden role="hidden" class="fixed inset-0 w-6/12 ml-auto bg-white bg-opacity-70 backdrop-blur-xl lg:block"></div>
-    <div class="relative h-full ml-auto lg:w-6/12">
-      <div class="m-auto py-12 px-6 sm:p-20 xl:w-10/12">
-        <div class="space-y-4 text-center flex justify-center flex-col object-center items-center   ">
-          <a href="">
-              <img src="../assets/image/mounttopuni.png" class="w-40" alt="Mountain top logo">
-          </a>
-          <p class="font-medium text-lg text-gray-600">Welcome to Mountain Top University!</p>
-        </div>
-        <form action="" class="register-form space-y-6 py-6">
-            <div>
-                <input 
-                
-                        type="text" 
-                        placeholder="First Name"
-                        name="fname"
-                        class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-                >
-            </div>
-            <div>
-              <input 
-                        type="text" 
-                
-                        placeholder="Last Name"
-                        name="lname"
-                        class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-              >
-          </div>
-          <div>
-            <input 
-                        type="text" 
-                
-                        placeholder="Matric Number"
-                        name="matric"
-                        class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none" 
-            >
-          </div>
-          <div>
-            <input 
-                type="text"
-                placeholder="Level"
-                name="level"
-                class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
-            >
-        </div>
+		::-webkit-scrollbar-thumb:hover {
+			background: #fff;
+		}
+	</style>
+	<body
+		class="bg-white"
+		x-data="{ showModal2: false }"
+		:class="{'overflow-y-hidden': showModal2 }"
+	>
+		<div class="2xl:container h-screen m-auto">
+			<div hidden class="fixed inset-0 w-7/12 lg:block">
+				<span class="absolute left-6 bottom-6 text-sm"
+					>Powered by team
+					<a href="https://www.CodIN.com/" target="blank" title="CodIN"
+						>CodIN</a
+					></span
+				>
+				<div
+					class="w-full h-full object-cover"
+					poster="../public/images/bg.jpg"
+				>
+					<div class="sliderAx h-auto">
+						<div id="slider-1" class="container mx-auto">
+							<div
+								class="bg-cover bg-center h-screen text-white py-24 px-10 object-fill"
+								style="background-image: url(../assets/image/monut.jpg)"
+							></div>
+							<!-- container -->
+							<br />
+						</div>
+						<div id="slider-2" class="container mx-auto">
+							<div
+								class="bg-cover bg-top h-screen text-white py-24 px-10 object-fill"
+								style="background-image: url(../assets/image/monuttop.jpg)"
+							></div>
+							<!-- container -->
+							<br />
+						</div>
+					</div>
+					<div class="flex justify-between w-12 mx-auto pb-2">
+						<button
+							id="sButton1"
+							onclick="sliderButton1()"
+							class="bg-purple-400 rounded-full w-4 pb-2"
+						></button>
+						<button
+							id="sButton2"
+							onclick="sliderButton2() "
+							class="bg-purple-400 rounded-full w-4 p-2"
+						></button>
+					</div>
+				</div>
+			</div>
+			<div
+				hidden
+				role="hidden"
+				class="fixed inset-0 w-6/12 ml-auto bg-white bg-opacity-70 backdrop-blur-xl lg:block"
+			></div>
+			<div class="relative h-full ml-auto lg:w-6/12">
+				<div class="m-auto py-12 px-6 sm:p-20 xl:w-10/12">
+					<div
+						class="space-y-4 text-center flex justify-center flex-col object-center items-center"
+					>
+						<a href="">
+							<img
+								src="../assets/image/mounttopuni.png"
+								class="w-40"
+								alt="Mountain top logo"
+							/>
+						</a>
+						<p class="font-medium text-lg text-gray-600">
+							Welcome to Mountain Top University!
+						</p>
+					</div>
+					<form action="" class="register-form space-y-6 py-6">
+						<div>
+							<input
+								type="text"
+								placeholder="First Name"
+								name="fname"
+								class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+							/>
+						</div>
+						<div>
+							<input
+								type="text"
+								placeholder="Last Name"
+								name="lname"
+								class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+							/>
+						</div>
+						<div>
+							<input
+								type="text"
+								placeholder="Matric Number"
+								name="matric"
+								class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+							/>
+						</div>
+						<div>
+							<input
+								type="text"
+								placeholder="Level"
+								name="level"
+								class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+							/>
+						</div>
 
-            <div class="flex flex-col items-end text-gray-600">
-              <select id="semester" class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none" required>
-                <option selected>Semester</option>
-                <option value="fs">First Semester</option>
-                <option value="ss">Second Semester</option>
-              </select>
-            </div>
-            <div>
-                <button
-                  class="submit-btn w-full px-6 py-3 rounded-xl bg-[#5d0189] hover:bg-[#5a0e7d] focus:bg-[#5d0189] active:bg-sky-800 transition-all duration-300">
-                    <span class="font-semibold text-white text-lg">Send</span>
-                </button>
-            </div>
-        </form>
+						<div class="flex flex-col items-end text-gray-600">
+							<select
+								id="semester"
+								class="w-full py-3 px-6 ring-1 ring-gray-300 rounded-xl placeholder-gray-600 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
+								required
+							>
+								<option selected>Semester</option>
+								<option value="fs">First Semester</option>
+								<option value="ss">Second Semester</option>
+							</select>
+						</div>
+						<div>
+							<button
+								class="submit-btn w-full px-6 py-3 rounded-xl bg-[#5d0189] hover:bg-[#5a0e7d] focus:bg-[#5d0189] active:bg-sky-800 transition-all duration-300"
+							>
+								<span class="font-semibold text-white text-lg">Send</span>
+							</button>
+						</div>
+					</form>
+					<p id="msgInfo"></p>
 
-        <div class="border-t pt-4">
-          <div class="space-y-2 text-center">
-            <span class="block text-sm tracking-wide text-gray-500">Powered by team <a href="https://www.CodIN.com/" target="blank" title="CodIN">CodIN</a></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+					<div class="border-t pt-4">
+						<div class="space-y-2 text-center">
+							<span class="block text-sm tracking-wide text-gray-500"
+								>Powered by team
+								<a href="https://www.CodIN.com/" target="blank" title="CodIN"
+									>CodIN</a
+								></span
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-  <!-- <div class="hidden" onclick="formPrint()" id="printForm">
+		<!-- <div class="hidden" onclick="formPrint()" id="printForm">
     <div x-show="modalOpen" x-transition class="bg-black bg-opacity-50 fixed top-0 left-0 w-full min-h-screen h-full flex items-center justify-center px-4 py-5 z-50">
       <div @click.outside="modalOpen = false" class="w-96 rounded-[2%] bg-white py-12 px-8 md:py-[60px] md:px-[70px] text-center">
         <div class="flex justify-center item-center">
@@ -150,118 +199,113 @@
     </div>
   </div> -->
 
-  <!-- js  -->
-  <script>
-    // const printForm = document.querySelector("#printForm");
+		<!-- js  -->
+		<script>
+			// const printForm = document.querySelector("#printForm");
 
-    // function openFormPrint() {
-    //     printForm.classList.remove('hidden');
-    // }
+			// function openFormPrint() {
+			//     printForm.classList.remove('hidden');
+			// }
 
-    const submitBtn =  document.querySelector('.submit-btn');
-    const registerForm = document.querySelector('.register-form');
+			const submitBtn = document.querySelector(".submit-btn");
+			const registerForm = document.querySelector(".register-form");
+			const msgInfo = document.getElementById("msgInfo");
 
-    submitBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const userDetails = {};
-      const userInputs = registerForm.querySelectorAll('input');
-      const userSelect = registerForm.querySelector('select');
+			submitBtn.addEventListener("click", (e) => {
+				e.preventDefault();
+				const userDetails = {};
+				const userInputs = registerForm.querySelectorAll("input");
+				const userSelect = registerForm.querySelector("select");
 
-      userInputs.forEach(item => {
-        userDetails[`${item.getAttribute('name')}`] = item.value;
-        console.log(item.getAttribute('name'))
-      });
+				userInputs.forEach((item) => {
+					userDetails[`${item.getAttribute("name")}`] = item.value;
+					console.log(item.getAttribute("name"));
+				});
 
-      userDetails[`${userSelect.getAttribute('id')}`] = userSelect.value;
+				userDetails[`${userSelect.getAttribute("id")}`] = userSelect.value;
 
-      console.log(userDetails);
-      console.log(JSON.stringify(userDetails));
-      if (userDetails.semester === 'Semester') {
-        console.log('Please, make a valid select!')
-      } else {
-        console.log('Post request triggered!');
-        fetch('http://localhost:8080/api/v1/signup',
-          {
-            method: 'post',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: userDetails
-          }
-        )
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
-      }
-    })
-  </script>
+				console.log(userDetails);
+				console.log(JSON.stringify(userDetails));
+				if (userDetails.semester === "Semester") {
+					console.log("Please, make a valid select!");
+				} else {
+					console.log("Post request triggered!");
+					fetch("http://localhost:8080/api/v1/signup", {
+						method: "post",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(userDetails),
+					})
+						.then((response) => response.json())
+						.then((data) => {
+							msgInfo.innerHTML = `${data?.msg}`;
+							setTimeout(() => {
+								window.location.href = "table.html";
+							}, 3000);
+						})
+						.catch((err) => console.log(err));
+				}
+			});
+		</script>
 
-  <script>
-    var cont=0;
-  function loopSlider(){
-  var xx= setInterval(function(){
-        switch(cont)
-        {
-        case 0:{
-            $("#slider-1").fadeOut(400);
-            $("#slider-2").delay(400).fadeIn(400);
-            $("#sButton1").removeClass("bg-purple-800");
-            $("#sButton2").addClass("bg-purple-800");
-        cont=1;
-        
-        break;
-        }
-        case 1:
-        {
-        
-            $("#slider-2").fadeOut(400);
-            $("#slider-1").delay(400).fadeIn(400);
-            $("#sButton2").removeClass("bg-purple-800");
-            $("#sButton1").addClass("bg-purple-800");
-          
-        cont=0;
-        
-        break;
-        }
-        
-        
-        }},8000);
+		<script>
+			var cont = 0;
+			function loopSlider() {
+				var xx = setInterval(function () {
+					switch (cont) {
+						case 0: {
+							$("#slider-1").fadeOut(400);
+							$("#slider-2").delay(400).fadeIn(400);
+							$("#sButton1").removeClass("bg-purple-800");
+							$("#sButton2").addClass("bg-purple-800");
+							cont = 1;
 
-  }
+							break;
+						}
+						case 1: {
+							$("#slider-2").fadeOut(400);
+							$("#slider-1").delay(400).fadeIn(400);
+							$("#sButton2").removeClass("bg-purple-800");
+							$("#sButton1").addClass("bg-purple-800");
 
-  function reinitLoop(time){
-  clearInterval(xx);
-  setTimeout(loopSlider(),time);
-  }
+							cont = 0;
 
-  function sliderButton1(){
+							break;
+						}
+					}
+				}, 8000);
+			}
 
-    $("#slider-2").fadeOut(400);
-    $("#slider-1").delay(400).fadeIn(400);
-    $("#sButton2").removeClass("bg-purple-800");
-    $("#sButton1").addClass("bg-purple-800");
-    reinitLoop(4000);
-    cont=0
-    
-    }
-    
-    function sliderButton2(){
-    $("#slider-1").fadeOut(400);
-    $("#slider-2").delay(400).fadeIn(400);
-    $("#sButton1").removeClass("bg-purple-800");
-    $("#sButton2").addClass("bg-purple-800");
-    reinitLoop(4000);
-    cont=1
-    
-    }
+			function reinitLoop(time) {
+				clearInterval(xx);
+				setTimeout(loopSlider(), time);
+			}
 
-    $(window).ready(function(){
-        $("#slider-2").hide();
-        $("#sButton1").addClass("bg-purple-800");
-        
+			function sliderButton1() {
+				$("#slider-2").fadeOut(400);
+				$("#slider-1").delay(400).fadeIn(400);
+				$("#sButton2").removeClass("bg-purple-800");
+				$("#sButton1").addClass("bg-purple-800");
+				reinitLoop(4000);
+				cont = 0;
+			}
 
-        loopSlider();
-    });
-  </script>
-</body>
+			function sliderButton2() {
+				$("#slider-1").fadeOut(400);
+				$("#slider-2").delay(400).fadeIn(400);
+				$("#sButton1").removeClass("bg-purple-800");
+				$("#sButton2").addClass("bg-purple-800");
+				reinitLoop(4000);
+				cont = 1;
+			}
+
+			$(window).ready(function () {
+				$("#slider-2").hide();
+				$("#sButton1").addClass("bg-purple-800");
+
+				loopSlider();
+			});
+		</script>
+	</body>
 </html>
